@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="border-t border-slate-200 bg-white">
       <div className="mx-auto grid max-w-6xl gap-6 px-4 py-10 md:grid-cols-3">
         <div>
-          <div className="font-[var(--font-serif)] text-lg font-semibold text-slate-900">
+          <div className="text-lg font-semibold text-slate-900">
             ScrapCo
           </div>
           <p className="mt-2 text-sm text-slate-600">

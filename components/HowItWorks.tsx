@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function HowItWorks() {
   return (
     <section className="mt-12">
@@ -7,6 +9,17 @@ export default function HowItWorks() {
           <p className="mt-2 text-sm text-slate-600">
             3 simple steps from request to payout.
           </p>
+        </div>
+
+        <div className="hidden md:block">
+          <div className="relative h-20 w-44 overflow-hidden rounded-2xl bg-white/80 shadow-sm ring-1 ring-slate-200/70 backdrop-blur">
+            <Image
+              src="/illustrations/how-it-works.png"
+              alt="How pickup works illustration"
+              fill
+              className="object-contain p-2"
+            />
+          </div>
         </div>
       </div>
 

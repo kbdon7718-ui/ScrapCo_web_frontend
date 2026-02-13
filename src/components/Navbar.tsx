@@ -16,10 +16,10 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/70 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 bg-white/70 backdrop-blur-xl ring-1 ring-slate-200/60">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
         <Link href="/" className="flex items-center gap-2">
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-emerald-300 text-white shadow-sm">
+          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-green-500 to-sky-400 text-white shadow-sm">
             <span className="text-sm font-semibold">S</span>
           </span>
           <span className="text-sm font-semibold tracking-tight text-slate-900">
@@ -42,7 +42,7 @@ export default function Navbar() {
 
           <Link
             href="/request"
-            className="inline-flex h-10 items-center justify-center rounded-xl bg-sky-500 px-4 text-sm font-semibold text-white shadow-sm hover:bg-sky-600"
+            className="inline-flex h-10 items-center justify-center rounded-xl bg-green-500 px-4 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-green-600"
           >
             Schedule Pickup
           </Link>
@@ -50,7 +50,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-800 shadow-sm md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/80 text-slate-800 shadow-sm ring-1 ring-slate-200 md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
         >
@@ -84,7 +84,7 @@ export default function Navbar() {
                   <Link
                     href="/request"
                     onClick={() => setOpen(false)}
-                    className="mt-1 inline-flex h-11 items-center justify-center rounded-xl bg-sky-500 px-4 text-sm font-semibold text-white shadow-sm hover:bg-sky-600"
+                    className="mt-1 inline-flex h-11 items-center justify-center rounded-xl bg-green-500 px-4 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-green-600"
                   >
                     Schedule Pickup
                   </Link>

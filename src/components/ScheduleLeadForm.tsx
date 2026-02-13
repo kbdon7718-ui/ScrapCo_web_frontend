@@ -35,25 +35,27 @@ export default function ScheduleLeadForm() {
   }
 
   return (
-    <section className="mt-12">
-      <div className="rounded-3xl border border-slate-200 bg-white/70 p-8 shadow-sm backdrop-blur md:p-10">
-        <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
-          <div>
-            <h2 className="font-[var(--font-serif)] text-2xl font-semibold text-slate-900">
-              Schedule a Pickup
-            </h2>
-            <p className="mt-2 text-sm text-slate-600">
-              Share your phone, preferred date, and material details.
-            </p>
-          </div>
-        </div>
+    <section className="relative overflow-hidden rounded-3xl bg-slate-50 p-8 sm:p-10">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <div className="absolute -left-28 -top-28 h-72 w-72 rounded-full bg-sky-200/25 blur-3xl" />
+        <div className="absolute -right-28 -bottom-28 h-72 w-72 rounded-full bg-emerald-200/25 blur-3xl" />
+      </div>
 
-        <form onSubmit={onSubmit} className="mt-6 grid gap-4 md:grid-cols-3">
+      <div className="relative rounded-3xl bg-white/70 p-8 shadow-sm ring-1 ring-slate-200/60 backdrop-blur sm:p-10">
+        <div className="text-xs font-semibold uppercase tracking-wider text-slate-500">Schedule</div>
+        <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900">
+          Book a pickup in under a minute
+        </h2>
+        <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600">
+          Share your phone, preferred date, and material details.
+        </p>
+
+        <form onSubmit={onSubmit} className="mt-10 grid gap-4 md:grid-cols-3">
           <Field label="Phone" icon={<Phone className="h-4 w-4" />}>
             <input
               value={form.phone}
               onChange={(e) => setForm((p) => ({ ...p, phone: e.target.value }))}
-              className="h-11 w-full rounded-xl border border-slate-200 bg-white px-3 text-sm outline-none focus:border-sky-400"
+              className="h-11 w-full rounded-xl bg-white px-3 text-sm shadow-sm ring-1 ring-slate-200/70 outline-none transition focus:ring-2 focus:ring-green-500/30"
               placeholder="+91 9xxxx xxxxx"
             />
           </Field>
@@ -65,7 +67,7 @@ export default function ScheduleLeadForm() {
               onChange={(e) =>
                 setForm((p) => ({ ...p, pickupDate: e.target.value }))
               }
-              className="h-11 w-full rounded-xl border border-slate-200 bg-white px-3 text-sm outline-none focus:border-sky-400"
+              className="h-11 w-full rounded-xl bg-white px-3 text-sm shadow-sm ring-1 ring-slate-200/70 outline-none transition focus:ring-2 focus:ring-green-500/30"
             />
           </Field>
 
@@ -76,7 +78,7 @@ export default function ScheduleLeadForm() {
                 onChange={(e) =>
                   setForm((p) => ({ ...p, details: e.target.value }))
                 }
-                className="min-h-[110px] w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm outline-none focus:border-sky-400"
+                className="min-h-[110px] w-full rounded-xl bg-white px-3 py-2 text-sm shadow-sm ring-1 ring-slate-200/70 outline-none transition focus:ring-2 focus:ring-green-500/30"
                 placeholder="Example: 8kg newspaper + 2kg plastic bottles"
               />
             </Field>
@@ -87,7 +89,7 @@ export default function ScheduleLeadForm() {
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="inline-flex h-11 w-full items-center justify-center rounded-xl bg-sky-500 px-5 text-sm font-semibold text-white shadow-sm hover:bg-sky-600"
+              className="inline-flex h-12 w-full items-center justify-center rounded-xl bg-green-500 px-6 text-sm font-semibold text-white shadow-sm transition-all duration-300 ease-out hover:bg-green-600"
             >
               Continue to Booking
             </motion.button>

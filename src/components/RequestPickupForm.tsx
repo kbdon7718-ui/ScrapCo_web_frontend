@@ -448,17 +448,17 @@ export default function RequestPickupForm({
   return (
     <form
       onSubmit={onSubmit}
-      className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+      className="rounded-3xl bg-white/70 p-8 shadow-sm ring-1 ring-slate-200/60 backdrop-blur"
       aria-describedby={submitError ? `${formId}-submit-error` : undefined}
     >
       {isLoggedIn ? (
-        <div className="mb-6 rounded-2xl border border-slate-200 bg-green-50 px-4 py-3 text-sm text-green-800 ring-1 ring-green-100">
+        <div className="mb-6 rounded-2xl bg-emerald-50 px-4 py-3 text-sm text-emerald-800 ring-1 ring-emerald-100">
           Logged in{sessionEmail ? ` as ${sessionEmail}` : ""}.
         </div>
       ) : null}
 
       {!isLoggedIn && authGateOpen ? (
-        <div className="mb-6 rounded-3xl border border-slate-200 bg-slate-50 p-5">
+        <div className="mb-6 rounded-3xl bg-slate-50 p-6 ring-1 ring-slate-200/60">
           <div className="text-sm font-semibold text-slate-900">
             {authMode === "signin" ? "Sign in to continue" : "Create account to continue"}
           </div>
@@ -474,7 +474,7 @@ export default function RequestPickupForm({
                 autoComplete="email"
                 value={authEmail}
                 onChange={(e) => setAuthEmail(e.target.value)}
-                className="h-11 w-full rounded-xl border border-slate-200 px-3 text-sm outline-none focus:border-sky-400"
+                className="h-11 w-full rounded-xl bg-white px-3 text-sm shadow-sm ring-1 ring-slate-200/70 outline-none transition focus:ring-2 focus:ring-green-500/30"
                 placeholder="you@example.com"
               />
             </Field>
@@ -486,7 +486,7 @@ export default function RequestPickupForm({
                 autoComplete={authMode === "signin" ? "current-password" : "new-password"}
                 value={authPassword}
                 onChange={(e) => setAuthPassword(e.target.value)}
-                className="h-11 w-full rounded-xl border border-slate-200 px-3 text-sm outline-none focus:border-sky-400"
+                className="h-11 w-full rounded-xl bg-white px-3 text-sm shadow-sm ring-1 ring-slate-200/70 outline-none transition focus:ring-2 focus:ring-green-500/30"
                 placeholder="Your password"
               />
             </Field>
@@ -498,7 +498,7 @@ export default function RequestPickupForm({
                 type="button"
                 onClick={signInWithEmailPassword}
                 disabled={authStatus === "loading"}
-                className="inline-flex h-11 items-center justify-center rounded-xl bg-slate-900 px-5 text-sm font-semibold text-white hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60 md:w-auto"
+                className="inline-flex h-11 items-center justify-center rounded-xl bg-slate-900 px-5 text-sm font-semibold text-white shadow-sm transition-all duration-300 ease-out hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60 md:w-auto"
               >
                 {authStatus === "loading" ? "Signing in…" : "Sign in"}
               </button>
@@ -507,7 +507,7 @@ export default function RequestPickupForm({
                 type="button"
                 onClick={signUpWithEmailPassword}
                 disabled={authStatus === "loading"}
-                className="inline-flex h-11 items-center justify-center rounded-xl bg-slate-900 px-5 text-sm font-semibold text-white hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60 md:w-auto"
+                className="inline-flex h-11 items-center justify-center rounded-xl bg-slate-900 px-5 text-sm font-semibold text-white shadow-sm transition-all duration-300 ease-out hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60 md:w-auto"
               >
                 {authStatus === "loading" ? "Creating…" : "Create account"}
               </button>
@@ -517,7 +517,7 @@ export default function RequestPickupForm({
               type="button"
               onClick={() => setAuthMode((m) => (m === "signin" ? "signup" : "signin"))}
               disabled={authStatus === "loading"}
-              className="inline-flex h-11 items-center justify-center rounded-xl border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-900 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-60 md:w-auto"
+              className="inline-flex h-11 items-center justify-center rounded-xl bg-white px-5 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-slate-200/70 transition-all duration-300 ease-out hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60 md:w-auto"
             >
               {authMode === "signin" ? "Create account" : "I already have an account"}
             </button>
@@ -536,7 +536,7 @@ export default function RequestPickupForm({
           </div>
 
           {authError ? (
-            <div role="alert" className="mt-3 rounded-xl bg-white px-4 py-3 text-sm text-slate-800 ring-1 ring-slate-200">
+            <div role="alert" className="mt-3 rounded-xl bg-white px-4 py-3 text-sm text-slate-800 ring-1 ring-slate-200/70">
               {authError}
             </div>
           ) : null}
@@ -553,8 +553,10 @@ export default function RequestPickupForm({
                 <label
                   key={t.id}
                   className={
-                    "flex cursor-pointer items-center gap-2 rounded-xl border px-3 py-2 text-sm " +
-                    (checked ? "border-sky-300 bg-sky-50" : "border-slate-200 bg-white")
+                    "flex cursor-pointer items-center gap-2 rounded-xl bg-white px-3 py-2 text-sm shadow-sm ring-1 transition-all duration-300 ease-out " +
+                    (checked
+                      ? "ring-emerald-200 bg-emerald-50/60"
+                      : "ring-slate-200/70 hover:ring-slate-300")
                   }
                 >
                   <input
@@ -583,8 +585,8 @@ export default function RequestPickupForm({
             value={totalWeightKg}
             onChange={(e) => setTotalWeightKg(e.target.value)}
             className={
-              "h-11 w-full rounded-xl border px-3 text-sm outline-none focus:border-sky-400 " +
-              (fieldErrors.weight ? "border-red-300" : "border-slate-200")
+              "h-11 w-full rounded-xl bg-white px-3 text-sm shadow-sm ring-1 outline-none transition focus:ring-2 focus:ring-green-500/30 " +
+              (fieldErrors.weight ? "ring-red-200" : "ring-slate-200/70")
             }
             placeholder="e.g. 10"
             aria-invalid={fieldErrors.weight ? true : undefined}
@@ -597,8 +599,8 @@ export default function RequestPickupForm({
             value={timeSlot}
             onChange={(e) => setTimeSlot(e.target.value)}
             className={
-              "h-11 w-full rounded-xl border px-3 text-sm outline-none focus:border-sky-400 " +
-              (fieldErrors.timeSlot ? "border-red-300" : "border-slate-200")
+              "h-11 w-full rounded-xl bg-white px-3 text-sm shadow-sm ring-1 outline-none transition focus:ring-2 focus:ring-green-500/30 " +
+              (fieldErrors.timeSlot ? "ring-red-200" : "ring-slate-200/70")
             }
             aria-invalid={fieldErrors.timeSlot ? true : undefined}
           >
@@ -616,8 +618,8 @@ export default function RequestPickupForm({
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               className={
-                "min-h-[88px] w-full rounded-xl border px-3 py-2 text-sm outline-none focus:border-sky-400 " +
-                (fieldErrors.address ? "border-red-300" : "border-slate-200")
+                "min-h-[96px] w-full rounded-xl bg-white px-3 py-2 text-sm shadow-sm ring-1 outline-none transition focus:ring-2 focus:ring-green-500/30 " +
+                (fieldErrors.address ? "ring-red-200" : "ring-slate-200/70")
               }
               placeholder="House/Flat, Street, Area, City"
               aria-invalid={fieldErrors.address ? true : undefined}
@@ -626,7 +628,7 @@ export default function RequestPickupForm({
         </div>
 
         <div className="md:col-span-2">
-          <div className="flex flex-col gap-2 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+          <div className="flex flex-col gap-3 rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200/60">
             <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
               <div>
                 <div className="text-sm font-semibold text-slate-900">Pickup location</div>
@@ -638,7 +640,7 @@ export default function RequestPickupForm({
                 type="button"
                 onClick={useGeolocation}
                 disabled={geoStatus === "loading"}
-                className="inline-flex h-10 items-center justify-center rounded-xl border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-900 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-60"
+                className="inline-flex h-10 items-center justify-center rounded-xl bg-white px-4 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-slate-200/70 transition-all duration-300 ease-out hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {geoStatus === "loading" ? "Locating…" : "Use my current location"}
               </button>
@@ -652,8 +654,8 @@ export default function RequestPickupForm({
                   value={lat}
                   onChange={(e) => setLat(e.target.value)}
                   className={
-                    "h-11 w-full rounded-xl border px-3 text-sm outline-none focus:border-sky-400 " +
-                    (fieldErrors.latitude ? "border-red-300" : "border-slate-200")
+                    "h-11 w-full rounded-xl bg-white px-3 text-sm shadow-sm ring-1 outline-none transition focus:ring-2 focus:ring-green-500/30 " +
+                    (fieldErrors.latitude ? "ring-red-200" : "ring-slate-200/70")
                   }
                   placeholder="e.g. 24.8607"
                   aria-invalid={fieldErrors.latitude ? true : undefined}
@@ -667,8 +669,8 @@ export default function RequestPickupForm({
                   value={lon}
                   onChange={(e) => setLon(e.target.value)}
                   className={
-                    "h-11 w-full rounded-xl border px-3 text-sm outline-none focus:border-sky-400 " +
-                    (fieldErrors.longitude ? "border-red-300" : "border-slate-200")
+                    "h-11 w-full rounded-xl bg-white px-3 text-sm shadow-sm ring-1 outline-none transition focus:ring-2 focus:ring-green-500/30 " +
+                    (fieldErrors.longitude ? "ring-red-200" : "ring-slate-200/70")
                   }
                   placeholder="e.g. 67.0011"
                   aria-invalid={fieldErrors.longitude ? true : undefined}
@@ -683,7 +685,7 @@ export default function RequestPickupForm({
         </div>
       </div>
 
-      <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+      <div className="mt-6 rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200/60">
         <div className="text-xs font-semibold text-slate-700">Preview</div>
         <div className="mt-1 text-sm text-slate-900">
           {selectedCount > 0 && Number.isFinite(estimatedPerType) ? (
@@ -699,7 +701,7 @@ export default function RequestPickupForm({
       <button
         type="submit"
         disabled={submitting}
-        className="mt-6 inline-flex h-11 w-full items-center justify-center rounded-xl bg-green-600 px-5 text-sm font-semibold text-white shadow-sm hover:bg-green-700 disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-8 inline-flex h-12 w-full items-center justify-center rounded-xl bg-green-500 px-6 text-sm font-semibold text-white shadow-sm transition-all duration-300 ease-out hover:bg-green-600 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {submitting ? "Submitting…" : "Submit pickup request"}
       </button>

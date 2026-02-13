@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "ScrapCo — Sell Your Scrap. Get Paid Instantly.",
   description:
     "ScrapCo helps you sell scrap from home with instant payment and scheduled pickups.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({

@@ -1,4 +1,4 @@
-import PickupForm from "@/components/PickupForm";
+import RequestPickupForm from "@/components/RequestPickupForm";
 
 export default function RequestPage() {
   return (
@@ -8,7 +8,7 @@ export default function RequestPage() {
         Fill in a few details and we’ll contact you to confirm the slot.
       </p>
       <div className="mt-6">
-        <PickupForm />
+        <RequestPickupForm />
       </div>
     </main>
   );

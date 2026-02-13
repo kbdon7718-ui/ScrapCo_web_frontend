@@ -21,25 +21,28 @@ const items = [
 
 export default function CategoryGrid() {
   return (
-    <section className="mt-12">
+    <section>
       <div className="flex items-end justify-between gap-4">
         <div>
-          <h2 className="font-[var(--font-serif)] text-2xl font-semibold text-slate-900">
+          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+            Categories
+          </div>
+                <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900">
             What we pick up
           </h2>
-          <p className="mt-2 text-sm text-slate-600">
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600">
             Common scrap categories we handle regularly.
           </p>
         </div>
       </div>
 
-      <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
         {items.map((item) => (
           <motion.div
             key={item.title}
             whileHover={{ y: -2, scale: 1.01 }}
             whileTap={{ scale: 0.98 }}
-            className="rounded-3xl border border-slate-200 bg-white/70 p-4 shadow-sm backdrop-blur"
+            className="rounded-2xl bg-white/70 p-5 shadow-sm ring-1 ring-slate-200/60 backdrop-blur transition-shadow duration-300 ease-out hover:shadow-lg"
           >
             <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-sky-50 text-sky-700 ring-1 ring-sky-100">
               <item.icon className="h-5 w-5" />

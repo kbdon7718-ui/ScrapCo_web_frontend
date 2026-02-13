@@ -76,20 +76,20 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="mt-12">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid gap-6 lg:grid-cols-2">
+    <section id="contact" className="bg-slate-50">
+      <div className="mx-auto max-w-6xl px-4 py-20 sm:py-24">
+        <div className="text-xs font-semibold uppercase tracking-wider text-slate-500">Contact</div>
+        <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900">
+          Get in touch
+        </h2>
+        <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600">
+          We’re here to help you sell your scrap easily and transparently.
+        </p>
+
+        <div className="mt-10 grid gap-6 lg:grid-cols-2">
           {/* Left: Contact info */}
-          <div className="rounded-2xl border border-slate-200 bg-white shadow-lg">
+          <div className="rounded-3xl bg-white/70 shadow-sm ring-1 ring-slate-200/60 backdrop-blur">
             <div className="p-8 space-y-6">
-              <div>
-                <h2 className="font-[var(--font-serif)] text-3xl font-semibold text-slate-900">
-                  Get in Touch
-                </h2>
-                <p className="mt-2 text-sm text-slate-600">
-                  We’re here to help you sell your scrap easily and transparently.
-                </p>
-              </div>
 
               <div className="space-y-4">
                 <Row
@@ -147,9 +147,7 @@ export default function ContactSection() {
                   icon={<MapPin className="h-5 w-5" />}
                   label="Service Area"
                   value={
-                    <span className="font-semibold text-slate-900">
-                      Currently serving Delhi NCR
-                    </span>
+                    <span className="font-semibold text-slate-900">Narnaul • Singhana • Gorakhpur</span>
                   }
                 />
               </div>
@@ -159,7 +157,7 @@ export default function ContactSection() {
                   href="https://wa.me/917015277924"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-2xl bg-green-600 px-5 text-sm font-semibold text-white shadow-lg hover:bg-green-700"
+                  className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-green-500 px-6 text-sm font-semibold text-white shadow-sm transition-all duration-300 ease-out hover:bg-green-600"
                 >
                   <MessageCircle className="h-5 w-5" />
                   Chat on WhatsApp
@@ -172,12 +170,11 @@ export default function ContactSection() {
           </div>
 
           {/* Right: Contact form */}
-          <div className="rounded-2xl border border-slate-200 bg-white shadow-lg">
+          <div className="rounded-3xl bg-white/70 shadow-sm ring-1 ring-slate-200/60 backdrop-blur">
             <form onSubmit={onSubmit} className="p-8 space-y-6">
               <div>
-                <h3 className="font-[var(--font-serif)] text-2xl font-semibold text-slate-900">
-                  Send a message
-                </h3>
+                <div className="text-xs font-semibold uppercase tracking-wider text-slate-500">Message</div>
+                <h3 className="mt-2 text-2xl font-semibold text-slate-900">Send a message</h3>
                 <p className="mt-2 text-sm text-slate-600">
                   Share your details and we’ll get back soon.
                 </p>
@@ -188,7 +185,7 @@ export default function ContactSection() {
                   <input
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="h-11 w-full rounded-2xl border border-slate-200 bg-white px-3 text-sm outline-none focus:border-sky-400"
+                    className="h-11 w-full rounded-xl bg-white px-3 text-sm shadow-sm ring-1 ring-slate-200/70 outline-none transition focus:ring-2 focus:ring-green-500/30"
                     placeholder="Your name"
                     autoComplete="name"
                   />
@@ -198,7 +195,7 @@ export default function ContactSection() {
                   <input
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="h-11 w-full rounded-2xl border border-slate-200 bg-white px-3 text-sm outline-none focus:border-sky-400"
+                    className="h-11 w-full rounded-xl bg-white px-3 text-sm shadow-sm ring-1 ring-slate-200/70 outline-none transition focus:ring-2 focus:ring-green-500/30"
                     placeholder="Your phone"
                     autoComplete="tel"
                   />
@@ -208,7 +205,7 @@ export default function ContactSection() {
                   <textarea
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="min-h-[120px] w-full rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm outline-none focus:border-sky-400"
+                    className="min-h-[120px] w-full rounded-xl bg-white px-3 py-2 text-sm shadow-sm ring-1 ring-slate-200/70 outline-none transition focus:ring-2 focus:ring-green-500/30"
                     placeholder="How can we help?"
                   />
                 </Field>
@@ -217,7 +214,7 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={!canSubmit || status === "loading"}
-                className="inline-flex h-11 w-full items-center justify-center rounded-2xl bg-sky-500 px-5 text-sm font-semibold text-white shadow-lg hover:bg-sky-600 disabled:cursor-not-allowed disabled:opacity-60"
+                className="inline-flex h-12 w-full items-center justify-center rounded-xl bg-green-500 px-6 text-sm font-semibold text-white shadow-sm transition-all duration-300 ease-out hover:bg-green-600 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {status === "loading" ? "Sending…" : "Send Message"}
               </button>

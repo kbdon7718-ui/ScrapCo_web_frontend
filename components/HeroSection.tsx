@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
@@ -28,6 +29,18 @@ export default function HeroSection() {
           >
             Learn more
           </Link>
+        </div>
+      </div>
+
+      <div className="mt-8 overflow-hidden rounded-3xl bg-white/70 p-4 shadow-sm ring-1 ring-slate-200/70 backdrop-blur">
+        <div className="relative aspect-[4/3] w-full">
+          <Image
+            src="/illustrations/hero-pickup.png"
+            alt="Pickup booking illustration"
+            fill
+            className="object-contain"
+            priority
+          />
         </div>
       </div>
 

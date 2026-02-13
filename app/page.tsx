@@ -45,11 +45,9 @@ export default function HomePage() {
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
           {[
-            "Delhi",
-            "Noida",
-            "Gurugram",
-            "Ghaziabad",
-            "Faridabad",
+              "Narnaul, Haryana",
+              "Singhana, Rajasthan",
+              "Gorakhpur, UP",
           ].map((area) => (
             <span
               key={area}

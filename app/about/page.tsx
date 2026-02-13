@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function AboutPage() {
   return (
     <main className="mx-auto max-w-4xl px-4 py-10">
@@ -6,6 +8,20 @@ export default function AboutPage() {
         ScrapCo is building a simple way for households and small businesses to
         sell scrap with transparent pricing, doorstep pickup, and instant payment.
       </p>
+
+      <div className="mt-6">
+        <div className="relative overflow-hidden rounded-3xl bg-slate-50 p-4 ring-1 ring-slate-200">
+          <div className="relative aspect-[16/9] w-full">
+            <Image
+              src="/illustrations/how-it-works.png"
+              alt="Scrap pickup illustration"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+        </div>
+      </div>
     </main>
   );
 }
