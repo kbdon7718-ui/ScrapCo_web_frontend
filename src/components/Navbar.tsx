@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -12,6 +13,11 @@ const navItems = [
   { href: "/contact", label: "Contact" },
 ];
 
+const APP_DOWNLOAD_URL =
+  "https://expo.dev/accounts/azad_gupta/projects/scrapcocustomer/builds/09bcb281-6e49-45d6-b758-143926e23ecd";
+
+const CAREERS_PHONE = "8053317489";
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -19,10 +25,17 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-white/70 backdrop-blur-xl ring-1 ring-slate-200/60">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
         <Link href="/" className="flex items-center gap-2">
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-green-500 to-sky-400 text-white shadow-sm">
-            <span className="text-sm font-semibold">S</span>
+          <span className="relative inline-flex h-9 w-9 overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-200/60">
+            <Image
+              src="/icon.png"
+              alt="ScrapCo logo"
+              fill
+              sizes="36px"
+              className="object-contain p-1"
+              priority
+            />
           </span>
-          <span className="text-sm font-semibold tracking-tight text-slate-900">
+          <span className="text-base font-semibold tracking-tight text-slate-900 sm:text-lg">
             ScrapCo
           </span>
         </Link>
@@ -38,7 +51,23 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
+
+            <a
+              href={`tel:${CAREERS_PHONE}`}
+              className="text-sm font-semibold text-slate-700 hover:text-slate-900"
+            >
+              Careers
+            </a>
           </nav>
+
+          <a
+            href={APP_DOWNLOAD_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex h-10 items-center justify-center rounded-xl bg-white/70 px-4 text-sm font-semibold text-sky-700 shadow-sm ring-1 ring-slate-200/60 transition-colors hover:bg-white"
+          >
+            Download App
+          </a>
 
           <Link
             href="/request"
@@ -80,6 +109,24 @@ export default function Navbar() {
                       {item.label}
                     </Link>
                   ))}
+
+                  <a
+                    href={`tel:${CAREERS_PHONE}`}
+                    className="rounded-xl px-3 py-2 text-sm font-semibold text-slate-800 hover:bg-slate-50"
+                    onClick={() => setOpen(false)}
+                  >
+                    Careers
+                  </a>
+
+                  <a
+                    href={APP_DOWNLOAD_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-xl px-3 py-2 text-sm font-semibold text-sky-700 ring-1 ring-slate-200/60 hover:bg-white"
+                    onClick={() => setOpen(false)}
+                  >
+                    Download App
+                  </a>
 
                   <Link
                     href="/request"

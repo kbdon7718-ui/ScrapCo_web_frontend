@@ -1,11 +1,16 @@
 import Link from "next/link";
 
+const APP_DOWNLOAD_URL =
+  "https://expo.dev/accounts/azad_gupta/projects/scrapcocustomer/builds/09bcb281-6e49-45d6-b758-143926e23ecd";
+
+const CAREERS_PHONE = "8053317489";
+
 export default function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-white">
       <div className="mx-auto grid max-w-6xl gap-6 px-4 py-10 md:grid-cols-3">
         <div>
-          <div className="text-lg font-semibold text-slate-900">
+          <div className="text-xl font-semibold text-slate-900">
             ScrapCo
           </div>
           <p className="mt-2 text-sm text-slate-600">
@@ -19,6 +24,17 @@ export default function Footer() {
             <Link className="text-slate-600 hover:text-slate-900" href="/request">
               Book Pickup
             </Link>
+            <a
+              className="text-slate-600 hover:text-slate-900"
+              href={APP_DOWNLOAD_URL}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Download App
+            </a>
+            <a className="text-slate-600 hover:text-slate-900" href={`tel:${CAREERS_PHONE}`}>
+              Careers
+            </a>
             <Link className="text-slate-600 hover:text-slate-900" href="/about">
               About
             </Link>

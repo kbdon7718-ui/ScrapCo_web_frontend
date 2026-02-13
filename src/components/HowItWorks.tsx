@@ -6,6 +6,8 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { ArrowRight, Factory, Store, User, Warehouse, Handshake } from "lucide-react";
 
+import journeyBanner from "../../app/ChatGPT Image Feb 13, 2026, 11_34_38 PM.png";
+
 type JourneyKey = "customer" | "vendor" | "store" | "godown" | "mill";
 
 type JourneyRole = {
@@ -270,6 +272,18 @@ export default function HowItWorks() {
             ) : null}
           </motion.div>
         </AnimatePresence>
+      </div>
+
+      <div className="mt-8 overflow-hidden rounded-3xl bg-slate-50 shadow-sm ring-1 ring-slate-200/60">
+        <div className="relative h-40 w-full sm:h-48 md:h-56 lg:h-64">
+          <Image
+            src={journeyBanner}
+            alt="ScrapCo journey illustration"
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+        </div>
       </div>
     </section>
   );
