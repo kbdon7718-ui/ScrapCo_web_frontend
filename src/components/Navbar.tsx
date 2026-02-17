@@ -109,7 +109,6 @@ export default function Navbar() {
                       {item.label}
                     </Link>
                   ))}
-
                   <a
                     href={`tel:${CAREERS_PHONE}`}
                     className="rounded-xl px-3 py-2 text-sm font-semibold text-slate-800 hover:bg-slate-50"

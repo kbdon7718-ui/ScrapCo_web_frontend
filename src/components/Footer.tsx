@@ -21,6 +21,9 @@ export default function Footer() {
         <div>
           <div className="text-sm font-semibold text-slate-900">Quick Links</div>
           <div className="mt-2 flex flex-col gap-2 text-sm">
+            <Link className="font-semibold text-slate-900 hover:text-slate-900" href="/partner-portal">
+              Partner Portal
+            </Link>
             <Link className="text-slate-600 hover:text-slate-900" href="/request">
               Book Pickup
             </Link>

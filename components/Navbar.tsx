@@ -40,7 +40,6 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
-
           <a
             href={`tel:${CAREERS_PHONE}`}
             className="text-sm font-semibold text-slate-700 hover:text-slate-900"
