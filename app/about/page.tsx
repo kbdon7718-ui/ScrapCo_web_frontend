@@ -1,4 +1,20 @@
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+  description: "Learn about ScrapCo and our mission to make scrap selling simple with transparent pricing, doorstep pickup, and instant payment.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About ScrapCo",
+    description: "Learn about ScrapCo and our mission to make scrap selling simple with transparent pricing, doorstep pickup, and instant payment.",
+    url: "https://scrapco.app/about",
+  },
+  twitter: {
+    title: "About ScrapCo",
+    description: "Learn about ScrapCo and our mission to make scrap selling simple with transparent pricing, doorstep pickup, and instant payment.",
+  },
+};
 
 export default function AboutPage() {
   return (

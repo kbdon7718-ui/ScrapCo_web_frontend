@@ -1,6 +1,23 @@
 import HeroSection from "@/components/HeroSection";
 import HowItWorks from "@/components/HowItWorks";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Sell scrap from home with scheduled pickup and instant payment. Transparent rates and verified pickup partners.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "ScrapCo — Sell Your Scrap. Get Paid Instantly.",
+    description: "Sell scrap from home with scheduled pickup and instant payment. Transparent rates and verified pickup partners.",
+    url: "https://scrapco.app/",
+  },
+  twitter: {
+    title: "ScrapCo — Sell Your Scrap. Get Paid Instantly.",
+    description: "Sell scrap from home with scheduled pickup and instant payment. Transparent rates and verified pickup partners.",
+  },
+};
+
 export default function HomePage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-10">

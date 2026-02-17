@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 
 const APP_DOWNLOAD_URL =
   "https://expo.dev/accounts/azad_gupta/projects/scrapcocustomer/builds/09bcb281-6e49-45d6-b758-143926e23ecd";
@@ -23,6 +24,9 @@ export default function Footer() {
           <div className="mt-2 flex flex-col gap-2 text-sm">
             <Link className="font-semibold text-slate-900 hover:text-slate-900" href="/partner-portal">
               Partner Portal
+            </Link>
+            <Link className="text-slate-600 hover:text-slate-900" href="/blog">
+              Blog
             </Link>
             <Link className="text-slate-600 hover:text-slate-900" href="/request">
               Book Pickup
@@ -51,6 +55,27 @@ export default function Footer() {
           <div className="text-sm font-semibold text-slate-900">Contact</div>
           <p className="mt-2 text-sm text-slate-600">kbdon7718@gmail.com</p>
           <p className="mt-1 text-sm text-slate-600">7015277924</p>
+
+          <div className="mt-3 flex items-center gap-3">
+            <SocialIcon
+              label="Instagram"
+              href="https://www.instagram.com/_scrapco/"
+              icon={<Instagram className="h-4 w-4" />}
+            />
+            <SocialIcon label="Twitter" icon={<Twitter className="h-4 w-4" />} />
+            <SocialIcon
+              label="Facebook"
+              href="https://www.facebook.com/profile.php?id=61588204657663"
+              icon={<Facebook className="h-4 w-4" />}
+            />
+            <SocialIcon
+              label="YouTube"
+              href="https://www.youtube.com/channel/UChhnTXkJlzzQS8-00DMz4Iw"
+              icon={<Youtube className="h-4 w-4" />}
+            />
+            <SocialIcon label="LinkedIn" icon={<Linkedin className="h-4 w-4" />} />
+          </div>
+
           <a
             className="mt-2 inline-flex text-sm font-semibold text-slate-600 hover:text-slate-900"
             href="https://scrap-co-admin-frontend-2yao.vercel.app/"
@@ -63,5 +88,43 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function SocialIcon({
+  label,
+  icon,
+  href,
+}: {
+  label: string;
+  icon: React.ReactNode;
+  href?: string;
+}) {
+  const className =
+    "inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white text-slate-700 shadow-sm ring-1 ring-slate-200/70 transition-colors hover:bg-slate-50 hover:text-slate-900";
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={label}
+        title={label}
+        className={className}
+      >
+        {icon}
+      </a>
+    );
+  }
+
+  return (
+    <span
+      aria-label={label}
+      title={`${label} (link coming soon)`}
+      className={className + " cursor-not-allowed opacity-60"}
+    >
+      {icon}
+    </span>
   );
 }

@@ -17,6 +17,18 @@ export const metadata: Metadata = {
 	title: "Partner With ScrapCo | Partner Portal",
 	description:
 		"Join ScrapCo as a scrap vendor or godown partner. Get steady orders, transparent tracking, and faster payments.",
+	alternates: { canonical: "/partner-portal" },
+	openGraph: {
+		title: "Partner With ScrapCo | Partner Portal",
+		description:
+			"Join ScrapCo as a scrap vendor or godown partner. Get steady orders, transparent tracking, and faster payments.",
+		url: "https://scrapco.app/partner-portal",
+	},
+	twitter: {
+		title: "Partner With ScrapCo | Partner Portal",
+		description:
+			"Join ScrapCo as a scrap vendor or godown partner. Get steady orders, transparent tracking, and faster payments.",
+	},
 };
 
 const VENDOR_APP_URL = process.env.NEXT_PUBLIC_VENDOR_APP_URL || "https://gd-10-0-frontend.vercel.app/";
@@ -34,8 +46,51 @@ function Bullet({ icon: Icon, children }: { icon: React.ComponentType<{ classNam
 }
 
 export default function PartnerPortalPage() {
+	const faqJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		mainEntity: [
+			{
+				"@type": "Question",
+				name: "Who can become a vendor?",
+				acceptedAnswer: {
+					"@type": "Answer",
+					text: "Any scrap pickup business/operator who can handle local pickups responsibly.",
+				},
+			},
+			{
+				"@type": "Question",
+				name: "Is there any registration fee?",
+				acceptedAnswer: {
+					"@type": "Answer",
+					text: "No hidden fee. We keep onboarding simple and transparent.",
+				},
+			},
+			{
+				"@type": "Question",
+				name: "How are orders assigned?",
+				acceptedAnswer: {
+					"@type": "Answer",
+					text: "Assignments are location-based and depend on partner availability and performance.",
+				},
+			},
+			{
+				"@type": "Question",
+				name: "How do payments work?",
+				acceptedAnswer: {
+					"@type": "Answer",
+					text: "You can track jobs digitally and settlements are processed quickly with clear records.",
+				},
+			},
+		],
+	};
+
 	return (
 		<main className="mx-auto w-full max-w-6xl px-4 py-10">
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+			/>
 			<section className="mx-auto max-w-3xl text-center">
 				<div className="inline-flex items-center gap-2 rounded-full bg-slate-50 px-4 py-2 text-xs font-semibold text-slate-700 ring-1 ring-slate-200">
 					<Handshake className="h-4 w-4" />

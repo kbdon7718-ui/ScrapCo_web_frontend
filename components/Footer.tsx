@@ -17,6 +17,9 @@ export default function Footer() {
             <Link className="font-semibold text-slate-900 hover:text-slate-900" href="/partner-portal">
               Partner Portal
             </Link>
+            <Link className="text-slate-600 hover:text-slate-900" href="/blog">
+              Blog
+            </Link>
             <Link className="text-slate-600 hover:text-slate-900" href="/request">
               Book Pickup
             </Link>
