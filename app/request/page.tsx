@@ -4,16 +4,19 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Book a Pickup",
-  description: "Schedule a scrap pickup from your home or business. Quick booking, transparent rates, and verified pickup partners.",
+  description:
+    "Schedule a scrap pickup from your home or business. Serving Narnaul, Singhana, and Gorakhpur with verified pickup partners.",
   alternates: { canonical: "/request" },
   openGraph: {
     title: "Book a Scrap Pickup | ScrapCo",
-    description: "Schedule a scrap pickup from your home or business. Quick booking, transparent rates, and verified pickup partners.",
+    description:
+      "Schedule a scrap pickup from your home or business. Serving Narnaul, Singhana, and Gorakhpur with verified pickup partners.",
     url: "https://scrapco.app/request",
   },
   twitter: {
     title: "Book a Scrap Pickup | ScrapCo",
-    description: "Schedule a scrap pickup from your home or business. Quick booking, transparent rates, and verified pickup partners.",
+    description:
+      "Schedule a scrap pickup from your home or business. Serving Narnaul, Singhana, and Gorakhpur with verified pickup partners.",
   },
 };
 
@@ -45,6 +48,23 @@ export default function RequestPage() {
       <div className="mt-6">
         <RequestPickupForm />
       </div>
+
+    <div className="mt-8 rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200">
+      <div className="text-sm font-semibold text-slate-900">What happens next?</div>
+      <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm text-slate-700">
+        <li>You submit your pickup details.</li>
+        <li>We confirm the slot.</li>
+        <li>A verified pickup partner visits your location.</li>
+      </ol>
+      <div className="mt-4 text-xs font-semibold uppercase tracking-wider text-slate-500">Currently serving</div>
+      <div className="mt-2 flex flex-wrap gap-2">
+        {["Narnaul, Haryana", "Singhana, Rajasthan", "Gorakhpur, UP"].map((a) => (
+          <span key={a} className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-200">
+            {a}
+          </span>
+        ))}
+      </div>
+    </div>
     </main>
   );
 }

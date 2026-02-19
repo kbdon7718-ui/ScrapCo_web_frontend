@@ -14,18 +14,18 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-	title: "Partner With ScrapCo | Partner Portal",
+	title: "Partner With ScrapCo (Vendor / Godown)",
 	description:
 		"Join ScrapCo as a scrap vendor or godown partner. Get steady orders, transparent tracking, and faster payments.",
 	alternates: { canonical: "/partner-portal" },
 	openGraph: {
-		title: "Partner With ScrapCo | Partner Portal",
+		title: "Partner With ScrapCo (Vendor / Godown) | ScrapCo",
 		description:
 			"Join ScrapCo as a scrap vendor or godown partner. Get steady orders, transparent tracking, and faster payments.",
 		url: "https://scrapco.app/partner-portal",
 	},
 	twitter: {
-		title: "Partner With ScrapCo | Partner Portal",
+		title: "Partner With ScrapCo (Vendor / Godown) | ScrapCo",
 		description:
 			"Join ScrapCo as a scrap vendor or godown partner. Get steady orders, transparent tracking, and faster payments.",
 	},

@@ -1,26 +1,73 @@
 import HeroSection from "@/components/HeroSection";
 import HowItWorks from "@/components/HowItWorks";
+import Link from "next/link";
 
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Home",
-  description: "Sell scrap from home with scheduled pickup and instant payment. Transparent rates and verified pickup partners.",
+  title: "Scrap Pickup in Narnaul, Singhana & Gorakhpur",
+  description:
+    "Book doorstep scrap pickup with ScrapCo. Transparent process, verified pickup partners, and quick scheduling in Narnaul, Singhana, and Gorakhpur.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "ScrapCo — Sell Your Scrap. Get Paid Instantly.",
-    description: "Sell scrap from home with scheduled pickup and instant payment. Transparent rates and verified pickup partners.",
+    title: "Scrap Pickup in Narnaul, Singhana & Gorakhpur | ScrapCo",
+    description:
+      "Book doorstep scrap pickup with ScrapCo. Transparent process, verified pickup partners, and quick scheduling in Narnaul, Singhana, and Gorakhpur.",
     url: "https://scrapco.app/",
   },
   twitter: {
-    title: "ScrapCo — Sell Your Scrap. Get Paid Instantly.",
-    description: "Sell scrap from home with scheduled pickup and instant payment. Transparent rates and verified pickup partners.",
+    title: "Scrap Pickup in Narnaul, Singhana & Gorakhpur | ScrapCo",
+    description:
+      "Book doorstep scrap pickup with ScrapCo. Transparent process, verified pickup partners, and quick scheduling in Narnaul, Singhana, and Gorakhpur.",
   },
 };
 
 export default function HomePage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How do I book a scrap pickup?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Open the Book Pickup page, fill your details, and submit. Our team confirms the slot and a verified pickup partner visits your location.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Which areas do you serve today?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Currently we serve Narnaul (Haryana), Singhana (Rajasthan), and Gorakhpur (UP).",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What scrap materials do you accept?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We handle common household and shop scrap like paper, plastic, and metal. Availability can vary by area.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How do I contact ScrapCo?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Use the Contact Us page to send us a message and we’ll reach out shortly.",
+        },
+      },
+    ],
+  };
+
   return (
     <main className="mx-auto max-w-6xl px-4 py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <HeroSection />
 
       <section className="mt-12 grid gap-4 md:grid-cols-3">
@@ -62,16 +109,17 @@ export default function HomePage() {
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
           {[
-              "Narnaul, Haryana",
-              "Singhana, Rajasthan",
-              "Gorakhpur, UP",
+            { label: "Narnaul, Haryana", href: "/locations/narnaul" },
+            { label: "Singhana, Rajasthan", href: "/locations/singhana" },
+            { label: "Gorakhpur, UP", href: "/locations/gorakhpur" },
           ].map((area) => (
-            <span
-              key={area}
-              className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-sm ring-1 ring-slate-200"
+            <Link
+              key={area.href}
+              href={area.href}
+              className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-sm ring-1 ring-slate-200 hover:bg-slate-50"
             >
-              {area}
-            </span>
+              {area.label}
+            </Link>
           ))}
         </div>
       </section>

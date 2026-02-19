@@ -113,6 +113,13 @@ export default async function BlogDetailPage({
         >
           ← Back to Blog
         </Link>
+
+		<Link
+		  href="/request"
+		  className="inline-flex h-10 items-center justify-center rounded-xl bg-green-500 px-4 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-green-600"
+		>
+		  Book Pickup
+		</Link>
       </div>
 
       {date ? <div className="mt-8 text-xs font-semibold uppercase tracking-wider text-slate-500">{date}</div> : null}
