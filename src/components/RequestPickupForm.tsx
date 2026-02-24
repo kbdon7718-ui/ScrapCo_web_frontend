@@ -721,7 +721,10 @@ export default function RequestPickupForm({
           role="status"
           className="mt-4 rounded-xl bg-green-50 px-4 py-3 text-sm text-green-700 ring-1 ring-green-100"
         >
-          Request submitted. Your pickup ID is <span className="font-mono">{successPickupId}</span>.
+          <div className="font-semibold">Our team will contact you soon to confirm pickup.</div>
+          <div className="mt-1 text-xs text-green-800">
+            Pickup ID: <span className="font-mono">{successPickupId}</span>
+          </div>
         </div>
       ) : null}
     </form>

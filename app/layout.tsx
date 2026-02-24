@@ -9,10 +9,11 @@ const siteUrl = "https://scrapco.app";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "ScrapCo — Sell Your Scrap. Get Paid Instantly.",
+    default: "ScrapCo — Now Live in Selected Areas",
     template: "%s | ScrapCo",
   },
-  description: "ScrapCo helps you sell scrap from home with instant payment and scheduled pickups.",
+  description:
+    "Now live in selected areas. Submit your pickup request and our team will confirm shortly.",
   alternates: {
     canonical: "/",
   },
@@ -26,13 +27,15 @@ export const metadata: Metadata = {
     type: "website",
     url: siteUrl,
     siteName: "ScrapCo",
-    title: "ScrapCo — Sell Your Scrap. Get Paid Instantly.",
-    description: "ScrapCo helps you sell scrap from home with instant payment and scheduled pickups.",
+    title: "ScrapCo — Now Live in Selected Areas",
+    description:
+      "Now live in selected areas. Submit your pickup request and our team will confirm shortly.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ScrapCo — Sell Your Scrap. Get Paid Instantly.",
-    description: "ScrapCo helps you sell scrap from home with instant payment and scheduled pickups.",
+    title: "ScrapCo — Now Live in Selected Areas",
+    description:
+      "Now live in selected areas. Submit your pickup request and our team will confirm shortly.",
   },
 };
 

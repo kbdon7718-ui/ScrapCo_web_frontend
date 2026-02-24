@@ -43,7 +43,7 @@ export default function HowItWorks() {
         helps: [
           "Easy scrap pickup from your home, shop, or factory",
           "Transparent digital weight & price system",
-          "Instant payment (Cash / UPI)",
+          "Payment on pickup (Cash / UPI)",
         ],
         whyJoin: [
           "No bargaining, fair pricing",

@@ -43,11 +43,13 @@ export default function RequestPage() {
       />
       <h1 className="text-2xl font-semibold text-slate-900">Book a Pickup</h1>
       <p className="mt-2 text-sm text-slate-600">
-        Fill in a few details and we’ll contact you to confirm the slot.
+        We are currently serving selected locations. Submit your pickup request and our team will confirm shortly.
       </p>
       <div className="mt-6">
         <RequestPickupForm />
       </div>
+
+      <p className="mt-3 text-xs font-semibold text-slate-500">Currently operating in limited zones.</p>
 
     <div className="mt-8 rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200">
       <div className="text-sm font-semibold text-slate-900">What happens next?</div>

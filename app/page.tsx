@@ -81,12 +81,12 @@ export default function HomePage() {
           </p>
         </div>
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="text-sm font-semibold text-green-600">Instant payment</div>
+              <div className="text-sm font-semibold text-green-600">Payment on pickup</div>
           <h2 className="mt-2 text-lg font-semibold text-slate-900">
             Get paid on pickup
           </h2>
           <p className="mt-2 text-sm text-slate-600">
-            Digital payments supported. No hidden fees.
+                Payment is handled at the time of collection.
           </p>
         </div>
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -105,7 +105,7 @@ export default function HomePage() {
       <section className="mt-12 rounded-3xl bg-sky-50 p-8 ring-1 ring-sky-100">
         <h2 className="text-xl font-semibold text-slate-900">Service Areas</h2>
         <p className="mt-2 text-sm text-slate-600">
-          We currently support pickups in select areas. Expand coverage coming soon.
+          We currently support pickups in selected areas.
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
           {[

@@ -25,7 +25,7 @@ export default function AboutPage() {
       <h1 className="text-2xl font-semibold text-slate-900">About ScrapCo</h1>
       <p className="mt-3 text-sm leading-6 text-slate-600">
         ScrapCo is building a simple way for households and small businesses to
-        sell scrap with transparent pricing, doorstep pickup, and instant payment.
+        sell scrap with transparent pricing, doorstep pickup, and payment on pickup.
       </p>
 
       <div className="mt-6">

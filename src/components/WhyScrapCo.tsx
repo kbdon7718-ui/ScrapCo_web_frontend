@@ -7,7 +7,7 @@ const features = [
     icon: ShieldCheck,
   },
   {
-    title: "Instant payment",
+    title: "Payment on pickup",
     desc: "Get paid right after weighing via UPI or cash.",
     icon: Banknote,
   },

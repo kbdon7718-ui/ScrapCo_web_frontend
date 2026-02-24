@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { CheckCircle2, Newspaper, Cpu, Recycle, ShieldCheck } from "lucide-react";
+import { CheckCircle2, Clock, Newspaper, Cpu, Recycle, ShieldCheck } from "lucide-react";
 
 import { useShineVars } from "@/components/useShineVars";
 
@@ -118,13 +118,16 @@ export default function HeroSection() {
           </div>
 
           <h1 className="mt-5 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
-            Turn scrap into cash.
-            <span className="text-slate-900"> Get paid instantly.</span>
+            Now Live in Selected Areas
           </h1>
 
           <p className="mt-4 max-w-xl text-sm leading-7 text-slate-600 md:text-base">
-            Book a doorstep pickup in minutes. We collect, weigh transparently, and pay instantly—built for trust and speed.
+            We are currently serving selected locations. Submit your pickup request and our team will confirm shortly.
           </p>
+
+          <div className="mt-3 text-xs font-semibold text-slate-500">
+            Manual confirmation within a few hours.
+          </div>
 
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
@@ -162,9 +165,9 @@ export default function HeroSection() {
 
           <div className="mt-10 grid gap-3 sm:grid-cols-3">
             {[
-              { title: "Transparent rates", desc: "No surprises", icon: CheckCircle2 },
-              { title: "Instant payment", desc: "UPI supported", icon: Recycle },
-              { title: "Verified vendors", desc: "Trusted network", icon: ShieldCheck },
+              { title: "Transparent process", desc: "Clear confirmation", icon: CheckCircle2 },
+              { title: "Manual confirmation", desc: "Within a few hours", icon: Clock },
+              { title: "Verified pickup partners", desc: "Trusted network", icon: ShieldCheck },
             ].map((item) => (
               <div
                 key={item.title}
@@ -230,10 +233,8 @@ export default function HeroSection() {
                 ))
               ) : (
                 <div className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-slate-200">
-                  <div className="text-sm font-semibold text-slate-900">Rates not available</div>
-                  <div className="mt-1 text-xs text-slate-600">
-                    Add active rows in Supabase <span className="font-semibold">scrap_rates</span> to show today’s prices.
-                  </div>
+                  <div className="text-sm font-semibold text-slate-900">Rates currently unavailable</div>
+                  <div className="mt-1 text-xs text-slate-600">Please check back later.</div>
                 </div>
               )}
             </div>

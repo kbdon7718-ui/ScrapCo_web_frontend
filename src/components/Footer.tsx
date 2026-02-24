@@ -15,7 +15,7 @@ export default function Footer() {
             ScrapCo
           </div>
           <p className="mt-2 text-sm text-slate-600">
-            Sell Your Scrap. Get Paid Instantly.
+            Now live in selected areas.
           </p>
         </div>
 
@@ -121,7 +121,7 @@ function SocialIcon({
   return (
     <span
       aria-label={label}
-      title={`${label} (link coming soon)`}
+      title={`${label} (link will be added)`}
       className={className + " cursor-not-allowed opacity-60"}
     >
       {icon}
